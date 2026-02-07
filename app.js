@@ -1,0 +1,9 @@
+var express = require('express');
+var app = express();
+
+const carstypeRoute = require('./routes/cars-routes');
+app.use('/api/listacars', carstypeRoute);
+
+app.use(express.json());
+app.listen(3000,()=> console.log('Server is running on port 3000'));
+

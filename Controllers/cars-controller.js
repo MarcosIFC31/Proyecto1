@@ -1,6 +1,6 @@
 const fs = require('fs');
-const cars = require('../models/cars');
-const carsJson = require('../data/cars.json')
+const cars = require('../Models/cars');
+const carsJson = require('../Data/cars.json')
 
 exports.listacars = async (req, res) => {
     let listacars = []

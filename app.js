@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-const carstypeRoute = require('./routes/cars-routes');
+const carstypeRoute = require('./Routes/cars-routes');
 app.use('/api/listacars', carstypeRoute);
 
 app.use(express.json());

@@ -1,6 +1,6 @@
 # Caddyfile
-localhost {
-    reverse_proxy app:3000
+api-cars.ddns.net {
+    reverse_proxy api-container:3000
 }
 
 

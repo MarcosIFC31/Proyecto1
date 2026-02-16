@@ -1,29 +1,16 @@
-version: '3.8'
 services:
-  app:
-    build: .
-    networks:
-      - caddy_net
-    # No es necesario exponer puertos de la app al host, solo internamente
-
   caddy:
-    image: caddy:latest
+    image: caddy
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./Caddy file:/etc/caddy/Caddy file # Monta tu configuración
-      - caddy_data:/data # Persistencia de certificados
-      - caddy_config:/config
-    depends_on:
-      - app
+      - ./Caddyfile:/etc/caddy
     networks:
       - caddy_net
-    restart: always
-
-volumes:
-  caddy_data:
-  caddy_config:
-
+  website:
+    image: ifc31c-iaw-cano-marcos
+    networks:
+        - caddy_net
 networks:
   caddy_net:

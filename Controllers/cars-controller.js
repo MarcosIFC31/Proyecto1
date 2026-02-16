@@ -15,3 +15,19 @@ exports.listacars = async (req, res) => {
     }
     return res.json(listacars);
 }
+//Filtrado por id
+exports.GetCarId = async (req, res) => {
+    let CarId = parseInt(req.params.id);
+
+    for (let i = 0; i < carsJson.length; i++) {
+        let car = new cars(
+            carsJson[i].id,
+            carsJson[i].nombre,
+            carsJson[i].modelos,
+        )
+
+        if (car.id === CarId) {
+            return res.json(car)
+        }
+    }
+}

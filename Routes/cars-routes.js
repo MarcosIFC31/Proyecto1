@@ -3,5 +3,5 @@ var router = express.Router();
 
 
 const carControler = require('../Controllers/cars-controller');
-router.get('/api/listacars', carControler.listacars)
+router.get('/listacars', carControler.listacars)
 module.exports = router;
